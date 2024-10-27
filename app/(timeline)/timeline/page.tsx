@@ -6,6 +6,10 @@ import Image from "next/image";
 const Timeline = () => {
   const { data: session } = useSession();
 
+  if (!session) {
+    return <p>Carregando...</p>;
+  }
+
   const handleSignOutClick = () => signOut();
 
   return (
