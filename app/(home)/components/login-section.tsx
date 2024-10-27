@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Copyright from "./copyright";
-import SignInApple from "./signin-apple";
+import SignInGithub from "./signin-github";
 import SignInGoogle from "./signin-google";
 
 const LoginSection = () => {
@@ -20,7 +20,7 @@ const LoginSection = () => {
         </div>
 
         <div className="space-y-3">
-          <SignInApple />
+          <SignInGithub />
           <SignInGoogle />
         </div>
 

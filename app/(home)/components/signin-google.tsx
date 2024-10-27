@@ -1,10 +1,13 @@
 "use client";
 
+import { signIn } from "next-auth/react";
 import SignInButton from "./signin-button";
 
 const SignInGoogle = () => {
+  const handleLogInClick = () => signIn("google");
+
   return (
-    <SignInButton handleClick={() => console.log("Entrar com o Google")}>
+    <SignInButton handleClick={handleLogInClick}>
       <svg
         width="16"
         height="16"
