@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { HomeIcon, PlusCircleIcon, SearchIcon, UserIcon } from "lucide-react";
+import { HomeIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
 
 const Menu = () => {
@@ -9,12 +9,6 @@ const Menu = () => {
 
   const menu_items = [
     { pageName: "Timeline", icon: <HomeIcon size={16} />, href: "/timeline" },
-    { pageName: "Explorar", icon: <SearchIcon size={16} />, href: "/explorer" },
-    {
-      pageName: "Publicar",
-      icon: <PlusCircleIcon size={16} />,
-      href: "/publish",
-    },
     { pageName: "Perfil", icon: <UserIcon size={16} />, href: "/profile" },
   ];
 

@@ -1,3 +1,4 @@
+import Form from "../components/form";
 import Search from "../components/search";
 
 const Timeline = () => {
@@ -5,6 +6,9 @@ const Timeline = () => {
     <>
       <div className="px-5 pt-5">
         <Search />
+      </div>
+      <div className="px-5 pt-5">
+        <Form />
       </div>
     </>
   );
