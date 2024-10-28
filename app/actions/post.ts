@@ -31,3 +31,27 @@ export const createNewPost = async ({
 
   revalidatePath("/");
 };
+
+export const deletePost = async ({ id }: { id: string }) => {
+  if (!id) {
+    throw new Error("Falha na solicitação.");
+  }
+
+  const post = await db.post.findFirst({
+    where: {
+      id: id,
+    },
+  });
+
+  if (!post) {
+    throw new Error("Publicação não encontrada.");
+  }
+
+  await db.post.delete({
+    where: {
+      id: post.id,
+    },
+  });
+
+  revalidatePath("/");
+};

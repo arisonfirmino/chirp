@@ -28,7 +28,7 @@ const Post = ({ post }: PostProps) => {
 
       <div className="flex items-center justify-between p-1.5">
         <ActionButtons />
-        {session?.user?.email === post.email && <DeleteButton />}
+        {session?.user?.email === post.email && <DeleteButton id={post.id} />}
       </div>
     </div>
   );
