@@ -1,5 +1,7 @@
 import { Post } from "@prisma/client";
 
+// Timeline Types
+
 export interface PostsListProps {
   posts: Post[];
 }
@@ -10,4 +12,16 @@ export interface PostProps {
 
 export interface FormData {
   post: string;
+}
+
+// Highlights Feed Types
+
+export interface HighlightsFeedProps {
+  topUsers: Record<string, Post[]>;
+}
+
+export interface UserHighlightProps {
+  image: string;
+  name: string;
+  length: number;
 }
