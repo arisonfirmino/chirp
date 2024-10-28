@@ -1,5 +1,13 @@
+import Search from "../components/search";
+
 const Timeline = () => {
-  return <>Timeline page</>;
+  return (
+    <>
+      <div className="px-5 pt-5">
+        <Search />
+      </div>
+    </>
+  );
 };
 
 export default Timeline;
