@@ -1,9 +1,12 @@
 "use client";
 
+import { useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { SendHorizontalIcon } from "lucide-react";
+import { createNewPost } from "@/app/actions/post";
+import { FormData } from "@/app/types";
 
 const schema = yup.object({
   post: yup
@@ -12,20 +15,28 @@ const schema = yup.object({
     .min(3, "Sua publicação deve ter ao menos 3 caracteres."),
 });
 
-interface FormData {
-  post: string;
-}
-
 const Form = () => {
+  const { data: session } = useSession();
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: FormData) => {
-    console.log(data);
+  const onSubmit = async (data: FormData) => {
+    const formData = {
+      name: session?.user?.name ?? "",
+      email: session?.user?.email ?? "",
+      image: session?.user?.image ?? "",
+      text: data.post,
+    };
+
+    await createNewPost(formData).then(() => {
+      reset();
+    });
   };
 
   return (
