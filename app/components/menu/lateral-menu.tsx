@@ -14,7 +14,7 @@ const LateralMenu = () => {
 
   return (
     <div
-      className={`top-0 z-10 flex h-20 w-full items-center justify-between border-b border-solid border-gray-400 bg-gray-100 px-5 text-white md:h-full md:w-20 md:flex-col md:justify-start md:bg-transparent md:p-0 xl:w-48 ${pathname === "/" ? "hidden" : "fixed"}`}
+      className={`fixed top-0 z-10 h-20 w-full items-center justify-between border-b border-solid border-gray-400 bg-gray-100 px-5 text-white md:h-full md:w-20 md:flex-col md:justify-start md:bg-transparent md:p-0 xl:w-48 ${pathname === "/" ? "hidden" : "flex"}`}
     >
       <div className="hidden pt-5 md:block">
         <Header />
