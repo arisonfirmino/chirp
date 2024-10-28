@@ -10,7 +10,7 @@ const Header = () => {
         width={259}
         className="h-5 w-5"
       />
-      <h1 className="hidden font-bold xl:block">text.ly</h1>
+      <h1 className="hidden font-bold xl:block">Chirp</h1>
     </header>
   );
 };

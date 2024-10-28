@@ -16,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "text.ly",
+  title: "Chirp",
   description:
     "Rede social dedicada à publicação de textos e interação com uma comunidade online.",
 };
