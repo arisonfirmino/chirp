@@ -1,4 +1,4 @@
-import Post from "./post";
+import Post from "../../components/post/post";
 import { PostsListProps } from "@/app/types";
 
 const PostsList = ({ posts }: PostsListProps) => {

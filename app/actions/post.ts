@@ -47,6 +47,12 @@ export const deletePost = async ({ id }: { id: string }) => {
     throw new Error("Publicação não encontrada.");
   }
 
+  await db.comment.deleteMany({
+    where: {
+      postId: post.id,
+    },
+  });
+
   await db.post.delete({
     where: {
       id: post.id,

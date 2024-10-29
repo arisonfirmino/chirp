@@ -1,7 +1,8 @@
 import { db } from "@/app/lib/prisma";
-import Form from "../components/form";
 import Search from "../components/search";
-import PostsList from "../components/post/posts-list";
+import PostsList from "../components/posts-list";
+import Form from "@/app/components/form/form";
+import { createNewPost } from "@/app/actions/post";
 
 const fetch = async () => {
   const getPosts = await db.post.findMany({
@@ -25,7 +26,10 @@ const Timeline = async () => {
       </div>
 
       <div className="px-5 pt-5">
-        <Form />
+        <Form
+          placeholder="O que está pensando?"
+          handleSubmitForm={createNewPost}
+        />
       </div>
 
       <div className="flex items-center gap-2.5 px-5 pt-5 text-sm text-gray-400">

@@ -1,4 +1,4 @@
-import { Post } from "@prisma/client";
+import { Post, Prisma } from "@prisma/client";
 
 // Timeline Types
 
@@ -7,7 +7,11 @@ export interface PostsListProps {
 }
 
 export interface PostProps {
-  post: Post;
+  post: Prisma.PostGetPayload<{
+    include: {
+      comments: true;
+    };
+  }>;
 }
 
 export interface FormData {
@@ -24,4 +28,12 @@ export interface UserHighlightProps {
   image: string;
   name: string;
   length: number;
+}
+
+// Comments Page Types
+
+export interface CommentsPageProps {
+  params: {
+    id: string;
+  };
 }

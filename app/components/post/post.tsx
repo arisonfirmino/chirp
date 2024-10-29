@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import { PostProps } from "@/app/types";
 import PostImage from "./post-image";
 import { formatDate } from "@/app/helpers/formatDate";
-import ActionButtons from "./action-buttons";
+import ActionButtons from "../action-buttons/action-buttons";
 import DeleteButton from "./delete-button";
 
 const Post = ({ post }: PostProps) => {
@@ -27,7 +27,7 @@ const Post = ({ post }: PostProps) => {
       <hr />
 
       <div className="flex items-center justify-between p-1.5">
-        <ActionButtons />
+        <ActionButtons id={post.id} />
         {session?.user?.email === post.email && <DeleteButton id={post.id} />}
       </div>
     </div>

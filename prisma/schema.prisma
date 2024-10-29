@@ -8,12 +8,26 @@ datasource db {
 }
 
 model Post {
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  email      String    @unique
+  image      String?
+  text       String
+  comments   Comment[]
+  created_at DateTime  @default(now())
+
+  @@map("posts")
+}
+
+model Comment {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   name       String
   email      String   @unique
   image      String?
   text       String
+  post       Post     @relation(fields: [postId], references: [id])
+  postId     String   @db.ObjectId
   created_at DateTime @default(now())
 
-  @@map("posts")
+  @@map("comments")
 }
