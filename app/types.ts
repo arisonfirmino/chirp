@@ -1,4 +1,4 @@
-import { Post, Prisma } from "@prisma/client";
+import { Post } from "@prisma/client";
 
 // Timeline Types
 
@@ -7,11 +7,7 @@ export interface PostsListProps {
 }
 
 export interface PostProps {
-  post: Prisma.PostGetPayload<{
-    include: {
-      comments: true;
-    };
-  }>;
+  post: Post;
 }
 
 export interface FormData {
