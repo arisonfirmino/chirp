@@ -33,7 +33,7 @@ export interface UserHighlightProps {
 // Comments Page Types
 
 export interface CommentsPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
